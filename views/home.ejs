@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>
+            <%= title %>
+        </title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+        <link rel="stylesheet" href="./CSS/style.css">
+    </head>
+    <body>
+        <h1 class=" heading-text center-text">
+            <i class="fas fa-id-card"> </i> Existing Contacts
+        </h1>
+        <ul >
+            <% for (let i of contact_List) {%>
+                <li >
+                    <div class="details">      
+                        <p><%= i.Name%></p>
+                        <p><%= i.Age%></p>
+                        <p><%= i.Phone%></p>
+                        
+                    </div>
+                    <div >
+                        <% if(i.Name!='Contacts'){%>
+                            <a href="/delete-contact/?Id=<%= i._id %>">
+                                <i class="fas fa-window-close box-size"></i>
+                            </a>
+                            
+                        <%}%>
+                    </div>
+                    
+                    
+                </li>
+            <%}%>
+        </ul>
+
+        <p>Create contacts</p>
+        <form  class="center-text"action="/create-contact" method="post">
+            <input type="text" name="Name" placeholder="Name" required>
+            <input type="text" name="Age" placeholder="Age">
+            <input type="text" name="Phone" placeholder="phone number" required>
+            <button type="submit"> Add</button>
+
+        </form>
+        <script src="JS/script.js"></script>
+    </body>
+</html>

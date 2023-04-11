@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>
+            <%= locals.title %>
+        </title>
+        <style>
+            h1{
+                color: white;
+                background-color: blue;
+            }
+            body{
+                background-image: linear-gradient(pink,green,blue);
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            <%= locals.myself%> is learning
+        </h1>
+        <h1>Counting!</h1>
+        <ul>
+            <% for(let i=1;i<10;i++){%>
+
+                <li>
+                    <%= i%>
+                </li>
+                <%}%>
+        </ul>
+        <h1>Conditional !, &</h1>
+        <% if(true) {%>
+            <h1>It's true statement</h1>
+        <% } else {%>
+            <p>It's false statement</p>
+        <%}%>
+    </body>
+</html>
